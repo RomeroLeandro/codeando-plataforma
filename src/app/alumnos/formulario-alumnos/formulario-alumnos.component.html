@@ -1,0 +1,31 @@
+<form [formGroup]="formulario" (ngSubmit)="agregarAlumno()">
+  <mat-form-field class="formulario-alumno-field">
+    <input matInput formControlName="nombre" placeholder="Nombre" required>
+  </mat-form-field>
+  <mat-form-field class="formulario-alumno-field">
+    <input matInput formControlName="apellido" placeholder="Apellido" required>
+  </mat-form-field>
+  <mat-form-field class="formulario-alumno-field">
+    <input matInput formControlName="dni" placeholder="DNI" required>
+  </mat-form-field>
+  <mat-form-field class="formulario-alumno-field">
+    <input matInput formControlName="edad" placeholder="Edad" required>
+  </mat-form-field>
+  <mat-form-field class="formulario-alumno-field">
+    <input matInput formControlName="fechaNacimiento" [matDatepicker]="picker" placeholder="Fecha de Nacimiento" required>
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  <mat-form-field class="formulario-alumno-field">
+    <input matInput formControlName="email" placeholder="Email" required>
+  </mat-form-field>
+  <div class="formulario-alumno-buttons">
+    <button mat-raised-button color="primary" type="submit" [disabled]="formulario.invalid">Guardar</button>
+    <!-- <button mat-raised-button color="warn" (click)="cancelarEdicion()">Cancelar</button> -->
+  </div>
+</form>
+  
+  
+  
+  
+  

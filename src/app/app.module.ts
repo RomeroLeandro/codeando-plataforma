@@ -6,6 +6,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // imports angular material
 import { NavbarModule } from './navbar/navbar.module';
+import { HttpClientModule } from '@angular/common/http';
+import { TablaAlumnosModule } from './alumnos/tabla-alumnos/tabla-alumnos.module';
+import { FormularioAlumnosModule } from './alumnos/formulario-alumnos/formulario-alumnos.module';
 
 @NgModule({
   declarations: [
@@ -14,7 +17,10 @@ import { NavbarModule } from './navbar/navbar.module';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    NavbarModule
+    NavbarModule,
+    HttpClientModule,
+    TablaAlumnosModule,
+    FormularioAlumnosModule
   ],
   providers: [],
   bootstrap: [AppComponent]

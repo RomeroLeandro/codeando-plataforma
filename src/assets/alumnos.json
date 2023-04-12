@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "nombre": "Juan",
+    "apellido": "Perez",
+    "dni": "12345678",
+    "edad": 25,
+    "fechaNacimiento": "1998-03-15",
+    "email": "juan.perez@example.com"
+  },
+  {
+    "id": 2,
+    "nombre": "Maria",
+    "apellido": "Gomez",
+    "dni": "98765432",
+    "edad": 28,
+    "fechaNacimiento": "1995-08-20",
+    "email": "maria.gomez@example.com"
+  },
+  {
+    "id": 3,
+    "nombre": "Carlos",
+    "apellido": "Lopez",
+    "dni": "45678901",
+    "edad": 22,
+    "fechaNacimiento": "2000-01-10",
+    "email": "carlos.lopez@example.com"
+  },
+  {
+    "id": 4,
+    "nombre": "Ana",
+    "apellido": "Martinez",
+    "dni": "10293847",
+    "edad": 30,
+    "fechaNacimiento": "1991-11-25",
+    "email": "ana.martinez@example.com"
+  },
+  {
+    "id": 5,
+    "nombre": "Pedro",
+    "apellido": "Rodriguez",
+    "dni": "76543210",
+    "edad": 24,
+    "fechaNacimiento": "1999-06-05",
+    "email": "pedro.rodriguez@example.com"
+  },
+  {
+    "id": 6,
+    "nombre": "Luisa",
+    "apellido": "Fernandez",
+    "dni": "87654321",
+    "edad": 27,
+    "fechaNacimiento": "1996-09-15",
+    "email": "luisa.fernandez@example.com"
+  },
+  {
+    "id": 7,
+    "nombre": "Diego",
+    "apellido": "Gonzalez",
+    "dni": "39485761",
+    "edad": 26,
+    "fechaNacimiento": "1997-04-18",
+    "email": "diego.gonzalez@example.com"
+  },
+  {
+    "id": 8,
+    "nombre": "Laura",
+    "apellido": "Sanchez",
+    "dni": "83746529",
+    "edad": 29,
+    "fechaNacimiento": "1994-02-22",
+    "email": "laura.sanchez@example.com"
+  },
+  {
+    "id": 9,
+    "nombre": "Jose",
+    "apellido": "Ramirez",
+    "dni": "64738291",
+    "edad": 23,
+    "fechaNacimiento": "1998-07-12",
+    "email": "jose.ramirez@example.com"
+  },
+  {
+    "id": 10,
+    "nombre": "Isabel",
+    "apellido": "Diaz",
+    "dni": "29183746",
+    "edad": 31,
+    "fechaNacimiento": "1990-12-05",
+    "email": "isabel.diaz@example.com"
+  }
+]
