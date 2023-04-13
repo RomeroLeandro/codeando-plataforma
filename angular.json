@@ -27,8 +27,7 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
-              "src/assets",
-              "src/assets/alumnos.json"
+              "src/assets"
               
             ],
             "styles": [

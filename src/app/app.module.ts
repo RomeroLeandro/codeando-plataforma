@@ -8,11 +8,18 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarModule } from './navbar/navbar.module';
 import { HttpClientModule } from '@angular/common/http';
 import { TablaAlumnosModule } from './alumnos/tabla-alumnos/tabla-alumnos.module';
-import { FormularioAlumnosModule } from './alumnos/formulario-alumnos/formulario-alumnos.module';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { FormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { AgregarAlumnoModalModule } from './alumnos/tabla-alumnos/agregar-alumno-modal/agregar-alumno-modal.module';
+import { EditarAlumnoModalModule } from './alumnos/tabla-alumnos/editar-alumno-modal/editar-alumno-modal.module';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [
     AppComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -20,9 +27,14 @@ import { FormularioAlumnosModule } from './alumnos/formulario-alumnos/formulario
     NavbarModule,
     HttpClientModule,
     TablaAlumnosModule,
-    FormularioAlumnosModule
+    MatSnackBarModule,
+    FormsModule,
+    MatFormFieldModule,
+    AgregarAlumnoModalModule,
+    EditarAlumnoModalModule,
+    MatDialogModule,
+    MatInputModule,
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
