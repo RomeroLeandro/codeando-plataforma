@@ -7,6 +7,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { TablaAlumnosModule } from '../alumnos/tabla-alumnos/tabla-alumnos.module';
 import { MatDialog, MatDialogModule} from '@angular/material/dialog'; // Importa MatDialogModule aquí
 import { CambiarTamanioFuenteDirective } from '../directive/cambiar-tamanio-fuente.directive';
+import { TimeModule } from '../time/time/time.module';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { CambiarTamanioFuenteDirective } from '../directive/cambiar-tamanio-fuen
         MatToolbarModule,
         MatIconModule,
         TablaAlumnosModule,
-        MatDialogModule // Agrega MatDialogModule aquí
+        MatDialogModule,
+        TimeModule
     ],
     exports: [
     NavbarComponent
