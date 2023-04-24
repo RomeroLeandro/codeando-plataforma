@@ -1,10 +1,34 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
+import { AuthService } from '../core/services/auth.service';
+import { Usuario } from '../core/models';
+import { Observable, Subject } from 'rxjs';
+import links from './nav-items';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss']
+  styleUrls: ['./dashboard.component.scss'],
 })
-export class DashboardComponent {
+export class DashboardComponent implements OnDestroy {
+  showFiller = false;
 
+  authUser$: Observable<Usuario>;
+
+  links = links;
+
+  destroyed$ = new Subject<void>();
+
+  constructor(private authService: AuthService, private router: Router) {
+    this.authUser$ = this.authService.obtenerUsuarioAutenticado();
+  }
+
+  ngOnDestroy(): void {
+    this.destroyed$.next();
+    this.destroyed$.complete();
+  }
+
+  logout(): void {
+    this.router.navigate(['auth', 'login']);
+  }
 }

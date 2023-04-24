@@ -3,42 +3,23 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-// imports angular material
-import { NavbarModule } from './navbar/navbar.module';
-import { HttpClientModule } from '@angular/common/http';
-import { TablaAlumnosModule } from './alumnos/tabla-alumnos/tabla-alumnos.module';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { FormsModule } from '@angular/forms';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { AgregarAlumnoModalModule } from './alumnos/tabla-alumnos/agregar-alumno-modal/agregar-alumno-modal.module';
-import { EditarAlumnoModalModule } from './alumnos/tabla-alumnos/editar-alumno-modal/editar-alumno-modal.module';
-import { MatDialog, MatDialogModule } from '@angular/material/dialog';
-import { MatInputModule } from '@angular/material/input';
-import { AuthComponent } from './auth/auth/auth.component';
-import { LoginComponent } from './auth/page/login/login/login.component';
+import { DashboardModule } from './dashboard/dashboard.module';
+import { AppRoutingModule } from './app-routing.module';
+import { AuthComponent } from './auth/auth.component';
+import { LoginComponent } from './auth/pages/login/login.component';
+import { CoreModule } from './core/core.module';
+import { CursosModule } from './dashboard/pages/cursos/cursos.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    AuthComponent,
-    LoginComponent,
-
-  ],
+  declarations: [AppComponent, AuthComponent, LoginComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    NavbarModule,
-    HttpClientModule,
-    TablaAlumnosModule,
-    MatSnackBarModule,
-    FormsModule,
-    MatFormFieldModule,
-    AgregarAlumnoModalModule,
-    EditarAlumnoModalModule,
-    MatDialogModule,
-    MatInputModule,
+    CoreModule,
+    DashboardModule,
+    AppRoutingModule,
   ],
-  bootstrap: [AppComponent]
+  providers: [],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
