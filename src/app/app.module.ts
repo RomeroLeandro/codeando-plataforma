@@ -15,10 +15,14 @@ import { AgregarAlumnoModalModule } from './alumnos/tabla-alumnos/agregar-alumno
 import { EditarAlumnoModalModule } from './alumnos/tabla-alumnos/editar-alumno-modal/editar-alumno-modal.module';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
+import { AuthComponent } from './auth/auth/auth.component';
+import { LoginComponent } from './auth/page/login/login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    AuthComponent,
+    LoginComponent,
 
   ],
   imports: [
