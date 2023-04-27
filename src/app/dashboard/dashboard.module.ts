@@ -9,6 +9,7 @@ import { AlumnosModule } from './pages/alumnos/alumnos.module';
 import { RouterModule } from '@angular/router';
 import { MatListModule } from '@angular/material/list';
 import { CursosModule } from './pages/cursos/cursos.module';
+import { InscripcionesModule } from './pages/inscripciones/inscripciones.module';
 
 @NgModule({
   declarations: [DashboardComponent],
@@ -22,6 +23,7 @@ import { CursosModule } from './pages/cursos/cursos.module';
     MatListModule,
     AlumnosModule,
     CursosModule,
+    InscripcionesModule,
   ],
   exports: [DashboardComponent],
 })

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, map, take } from 'rxjs';
 import { CrearCursoPayload, Curso } from '../models';
+import { AlumnosService } from '../../alumnos/services/alumnos.service';
 
 const CURSOS_MOCKS: Curso[] = [
   {
@@ -8,30 +9,35 @@ const CURSOS_MOCKS: Curso[] = [
     nombre: 'Angular',
     fecha_fin: new Date(),
     fecha_inicio: new Date(),
+    alumno: 'Juan Perez',
   },
   {
     id: 2,
     nombre: 'Javascript',
     fecha_fin: new Date(),
     fecha_inicio: new Date(),
+    alumno: 'Ana Martinez',
   },
   {
     id: 3,
     nombre: 'Desarrollo Web',
     fecha_fin: new Date(),
     fecha_inicio: new Date(),
+    alumno: 'Maria Gomez',
   },
   {
     id: 4,
     nombre: 'React',
     fecha_fin: new Date(),
     fecha_inicio: new Date(),
+    alumno: 'Pedro Sanchez',
   },
   {
     id: 5,
     nombre: 'Backend',
     fecha_fin: new Date(),
     fecha_inicio: new Date(),
+    alumno: 'Carlos Garcia',
   },
 ];
 
@@ -117,5 +123,10 @@ export class CursosService {
     });
 
     return this.cursos$.asObservable();
+  }
+  obtenerCursoPorId(id: number): Observable<Curso | undefined> {
+    return this.cursos$
+      .asObservable()
+      .pipe(map((cursos) => cursos.find((a) => a.id === id)));
   }
 }

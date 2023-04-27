@@ -6,6 +6,8 @@ import { AuthComponent } from './auth/auth.component';
 import { LoginComponent } from './auth/pages/login/login.component';
 import { DetalleAlumnoComponent } from './dashboard/pages/alumnos/pages/detalle-alumno/detalle-alumno.component';
 import { CursosComponent } from './dashboard/pages/cursos/cursos.component';
+import { InscripcionesComponent } from './dashboard/pages/inscripciones/inscripciones.component';
+import { DetalleCursoComponent } from './dashboard/pages/cursos/pages/detalle-curso/detalle-curso.component';
 
 const routes: Routes = [
   {
@@ -27,7 +29,20 @@ const routes: Routes = [
       },
       {
         path: 'cursos',
-        component: CursosComponent,
+        children: [
+          {
+            path: '',
+            component: CursosComponent,
+          },
+          {
+            path: ':id',
+            component: DetalleCursoComponent,
+          },
+        ],
+      },
+      {
+        path: 'inscripciones',
+        component: InscripcionesComponent,
       },
     ],
   },

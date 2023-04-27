@@ -18,7 +18,8 @@ export class AlumnosService {
       edad: 30,
       dni: 12345678,
       email: 'juan.perez@example.com',
-      fecha_registro: new Date(),
+      fecha_registro: new Date(2022, 2, 15),
+      cursos: 'Angular',
     },
     {
       id: 2,
@@ -27,7 +28,8 @@ export class AlumnosService {
       edad: 25,
       dni: 23456789,
       email: 'maria.gomez@example.com',
-      fecha_registro: new Date(),
+      fecha_registro: new Date(2022, 6, 23),
+      cursos: 'Desarrollo Web',
     },
     {
       id: 3,
@@ -36,7 +38,8 @@ export class AlumnosService {
       edad: 40,
       dni: 34567890,
       email: 'pedro.sanchez@example.com',
-      fecha_registro: new Date(),
+      fecha_registro: new Date(2023, 1, 14),
+      cursos: 'React',
     },
     {
       id: 4,
@@ -45,7 +48,8 @@ export class AlumnosService {
       edad: 35,
       dni: 45678901,
       email: 'ana.martinez@example.com',
-      fecha_registro: new Date(),
+      fecha_registro: new Date(2022, 9, 10),
+      cursos: 'Javascript',
     },
     {
       id: 5,
@@ -54,7 +58,8 @@ export class AlumnosService {
       edad: 28,
       dni: 56789012,
       email: 'carlos.garcia@example.com',
-      fecha_registro: new Date(),
+      fecha_registro: new Date(2022, 11, 25),
+      cursos: 'Backend',
     },
   ]);
 
@@ -69,4 +74,13 @@ export class AlumnosService {
       .asObservable()
       .pipe(map((alumnos) => alumnos.find((a) => a.id === id)));
   }
+  // obtenerAlumnosPorCursoId(cursoId: number): Alumno[] {
+  //   // Filtrar los alumnos por el ID del curso
+  //   const alumnosInscritos = this.estudiantes$
+  //     .getValue()
+  //     .filter((alumno) => alumno.idCurso === cursoId);
+
+  //   // Devolver la lista de alumnos inscritos en el curso
+  //   return alumnosInscritos;
+  // }
 }

@@ -10,10 +10,16 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 export class AbmAlumnosComponent {
   nombreControl = new FormControl('', [Validators.required]);
   apellidoControl = new FormControl('', [Validators.required]);
+  edadControl = new FormControl('', [Validators.required]);
+  dniControl = new FormControl('', [Validators.required]);
+  emailControl = new FormControl('', [Validators.required]);
 
   alumnosForm = new FormGroup({
     nombre: this.nombreControl,
     apellido: this.apellidoControl,
+    edad: this.edadControl,
+    dni: this.dniControl,
+    email: this.emailControl,
   });
 
   constructor(
@@ -23,6 +29,9 @@ export class AbmAlumnosComponent {
     if (data) {
       this.nombreControl.setValue(data.alumnoParaEditar.nombre);
       this.apellidoControl.setValue(data.alumnoParaEditar.apellido);
+      this.edadControl.setValue(data.alumnoParaEditar.edad);
+      this.dniControl.setValue(data.alumnoParaEditar.dni);
+      this.emailControl.setValue(data.alumnoParaEditar.email);
     }
   }
 

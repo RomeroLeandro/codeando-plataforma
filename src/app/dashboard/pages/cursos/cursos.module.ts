@@ -12,9 +12,10 @@ import { MatInputModule } from '@angular/material/input';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { DetalleCursoComponent } from './pages/detalle-curso/detalle-curso.component';
 
 @NgModule({
-  declarations: [CursosComponent, AbmCursosComponent],
+  declarations: [CursosComponent, AbmCursosComponent, DetalleCursoComponent],
   imports: [
     CommonModule,
     PipesModule,
@@ -31,5 +32,6 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatDatepickerModule,
     MatNativeDateModule,
   ],
+  exports: [CursosComponent],
 })
 export class CursosModule {}

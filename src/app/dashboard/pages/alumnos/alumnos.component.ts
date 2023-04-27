@@ -4,6 +4,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { AbmAlumnosComponent } from './abm-alumnos/abm-alumnos.component';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AlumnosService } from './services/alumnos.service';
+import { Curso } from '../cursos/models';
 
 export interface Alumno {
   id: number;
@@ -13,6 +14,7 @@ export interface Alumno {
   dni: number;
   email: string;
   fecha_registro: Date;
+  cursos: string;
 }
 
 @Component({
