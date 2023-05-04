@@ -1,10 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { CursosService } from './services/cursos.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { Curso } from './models';
 import { MatDialog } from '@angular/material/dialog';
 import { AbmCursosComponent } from './components/abm-cursos/abm-cursos.component';
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -12,11 +12,10 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './cursos.component.html',
   styleUrls: ['./cursos.component.scss'],
 })
-export class CursosComponent implements OnInit {
+export class CursosComponent implements OnInit, OnDestroy {
   dataSource = new MatTableDataSource();
 
   displayedColumns = [
-    'id',
     'nombre',
     'fecha_inicio',
     'fecha_fin',
@@ -25,15 +24,20 @@ export class CursosComponent implements OnInit {
     'eliminar',
   ];
 
+  cursosSuscription: Subscription | null = null;
+
   constructor(
     private cursosService: CursosService,
     private dialog: MatDialog,
     private activatedRoute: ActivatedRoute,
     private router: Router
   ) {}
+  ngOnDestroy(): void {
+    this.cursosSuscription?.unsubscribe();
+  }
 
   ngOnInit(): void {
-    this.cursosService.obtenerCursos().subscribe({
+    this.cursosSuscription = this.cursosService.obtenerCursos().subscribe({
       next: (cursos) => {
         this.dataSource.data = cursos;
       },

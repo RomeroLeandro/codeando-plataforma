@@ -1,6 +1,24 @@
-<p>{{ curso?.nombre }}</p>
-<p>{{ curso?.fecha_inicio | date : "dd/MM/YYYY" }}</p>
-<p>{{ curso?.fecha_fin | date : "dd/MM/YYYY" }}</p>
-<p>{{ curso?.alumno }}</p>
-<p></p>
-<p></p>
+<div class="divCurso">
+  <div class="detailCurso">
+    <div class="columnCurso">
+      <div class="datosCurso">
+        <h3>Nombre</h3>
+        <p>{{ curso?.nombre }}</p>
+      </div>
+      <div class="datosCurso">
+        <h3>Fecha de inicio</h3>
+        <p>{{ curso?.fecha_inicio | date : "dd/MM/YYYY" }}</p>
+      </div>
+    </div>
+    <div class="columnCurso">
+      <div class="datosCurso">
+        <h3>Alumnos</h3>
+        <p>{{ curso?.alumno }}</p>
+      </div>
+      <div class="datosCurso">
+        <h3>Fecha de finalizacion</h3>
+        <p>{{ curso?.fecha_fin | date : "dd/MM/YYYY" }}</p>
+      </div>
+    </div>
+  </div>
+</div>

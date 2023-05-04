@@ -26,15 +26,12 @@ export class AlumnosComponent {
   dataSource = new MatTableDataSource<Alumno>();
 
   displayedColumns: string[] = [
-    'id',
     'nombreCompleto',
-    'edad',
-    'dni',
     'email',
     'fecha_registro',
     'ver_detalle',
-    'eliminar',
     'editar',
+    'eliminar',
   ];
 
   aplicarFiltros(ev: Event): void {

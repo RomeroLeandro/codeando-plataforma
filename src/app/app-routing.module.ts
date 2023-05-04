@@ -6,57 +6,36 @@ import { AuthComponent } from './auth/auth.component';
 import { LoginComponent } from './auth/pages/login/login.component';
 import { DetalleAlumnoComponent } from './dashboard/pages/alumnos/pages/detalle-alumno/detalle-alumno.component';
 import { CursosComponent } from './dashboard/pages/cursos/cursos.component';
+import { AuthGuard } from './auth/guards/auth.guard';
+import { LoginGuard } from './auth/guards/login.guard';
 import { InscripcionesComponent } from './dashboard/pages/inscripciones/inscripciones.component';
-import { DetalleCursoComponent } from './dashboard/pages/cursos/pages/detalle-curso/detalle-curso.component';
 
 const routes: Routes = [
+  // DASHBOARD
   {
+    // http://localhost:XXXX/dashboard
     path: 'dashboard',
+    canActivate: [AuthGuard],
     component: DashboardComponent,
-    children: [
-      {
-        path: 'estudiantes',
-        children: [
-          {
-            path: '',
-            component: AlumnosComponent,
-          },
-          {
-            path: ':id',
-            component: DetalleAlumnoComponent,
-          },
-        ],
-      },
-      {
-        path: 'cursos',
-        children: [
-          {
-            path: '',
-            component: CursosComponent,
-          },
-          {
-            path: ':id',
-            component: DetalleCursoComponent,
-          },
-        ],
-      },
-      {
-        path: 'inscripciones',
-        component: InscripcionesComponent,
-      },
-    ],
+    loadChildren: () =>
+      import('./dashboard/dashboard.module').then((m) => m.DashboardModule),
   },
+
+  // AUTH
   {
     path: 'auth',
+    canActivate: [LoginGuard],
     component: AuthComponent,
-    children: [
-      {
-        path: 'login',
-        component: LoginComponent,
-      },
-    ],
+    loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule),
   },
   {
+    // CUALQUIER RUTA
+    path: 'inscripciones',
+    component: InscripcionesComponent,
+  },
+  // RUTAS INDEFINIDAS....
+  {
+    // CUALQUIER RUTA
     path: '**',
     redirectTo: 'dashboard',
   },

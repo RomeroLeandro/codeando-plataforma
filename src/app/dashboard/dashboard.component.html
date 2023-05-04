@@ -1,20 +1,30 @@
 <mat-drawer-container class="example-container" autosize>
   <!-- SIDEBAR -->
-  <mat-drawer [opened]="true" #drawer class="example-sidenav" mode="side">
-    <img width="50" height="50" src="../../assets/img/avatar.svg" />
-
-    <p>{{ (authUser$ | async)?.email }}</p>
-
-    <mat-nav-list>
+  <mat-drawer
+    [opened]="true"
+    #drawer
+    class="example-sidenav sidebar"
+    mode="side"
+  >
+    <div class="login">
+      <mat-icon>person</mat-icon>
+      <p>{{ (authUser$ | async)?.nombre }}</p>
+      <p>{{ (authUser$ | async)?.apellido }}</p>
+    </div>
+    <mat-nav-list class="links">
       <a [routerLink]="link.path" mat-list-item *ngFor="let link of links">
-        <mat-icon *ngIf="link.icon">{{ link.icon }}</mat-icon> {{ link.title }}
+        <mat-icon *ngIf="link.icon">{{ link.icon }}</mat-icon>
+        {{ link.title }}
       </a>
-      <a (click)="logout()" mat-list-item> Cerrar sesión </a>
     </mat-nav-list>
+    <div class="logout">
+      <p>{{ (authUser$ | async)?.email }}</p>
+      <a (click)="logout()" mat-list-item> Cerrar sesión </a>
+    </div>
   </mat-drawer>
   <div class="example-sidenav-content">
     <mat-toolbar color="primary">
-      <div class="flex justify-content-between">
+      <div class="navbar">
         <div>
           <button
             (click)="drawer.toggle()"
@@ -24,23 +34,9 @@
           >
             <mat-icon>menu</mat-icon>
           </button>
-          <span class="example-spacer"></span>
-          <button
-            mat-icon-button
-            class="example-icon favorite-icon"
-            aria-label="Example icon-button with heart icon"
-          >
-            <mat-icon>favorite</mat-icon>
-          </button>
-          <button
-            mat-icon-button
-            class="example-icon"
-            aria-label="Example icon-button with share icon"
-          >
-            <mat-icon>share</mat-icon>
-          </button>
+          <!-- <span class="example-spacer"></span> -->
+          <img src="../../assets/logo.png" alt="" />
         </div>
-        <p>{{ (authUser$ | async)?.nombre }}</p>
       </div>
     </mat-toolbar>
     <main>

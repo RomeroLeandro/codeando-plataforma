@@ -1,7 +1,7 @@
 .example-container {
     height: 100vh;
   }
-  
+
   .example-sidenav-content {
     main {
       padding: 1rem;
@@ -9,5 +9,39 @@
   }
   
   .example-sidenav {
+    height: 100%;
     padding: 20px;
+    display: flex;
+    justify-content: space-between;
+  }
+  img{
+    width: 100px;
+  }
+  .login{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5px;
+    p{
+      color: #7b1fa2;
+    }
+  }
+  .links{display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5px;
+  a{
+    padding: 0;
+  }}
+  .logout{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    a{
+      text-align: center;
+      color: red;
+    }
   }

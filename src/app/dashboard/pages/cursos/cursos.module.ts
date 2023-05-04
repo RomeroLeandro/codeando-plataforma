@@ -13,6 +13,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { DetalleCursoComponent } from './pages/detalle-curso/detalle-curso.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [CursosComponent, AbmCursosComponent, DetalleCursoComponent],
@@ -31,6 +32,16 @@ import { DetalleCursoComponent } from './pages/detalle-curso/detalle-curso.compo
     MatDialogModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    RouterModule.forChild([
+      {
+        path: '',
+        component: CursosComponent,
+      },
+      {
+        path: ':id',
+        component: DetalleCursoComponent,
+      },
+    ]),
   ],
   exports: [CursosComponent],
 })

@@ -1,35 +1,38 @@
-<table>
-  <thead>
-    <tr>
-      <th>Nombre y apellido</th>
-      <th>Cursos</th>
-      <th>Duracion de la cursada</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let inscripcion of inscripcion">
-      <td>
-        <ul>
-          <li *ngFor="let alumno of inscripcion.alumnos">
-            {{ alumno.nombre }} {{ alumno.apellido }}
-          </li>
-        </ul>
-      </td>
-      <td>
-        <ul>
-          <li *ngFor="let curso of inscripcion.cursos">
-            {{ curso.nombre }}
-          </li>
-        </ul>
-      </td>
-      <td>
-        <ul>
-          <li *ngFor="let curso of inscripcion.cursos">
-            {{ curso.fecha_inicio | date : "dd/MM/YYYY" }}
-            {{ curso.fecha_fin | date : "dd/MM/YYYY" }}
-          </li>
-        </ul>
-      </td>
-    </tr>
-  </tbody>
-</table>
+<div class="inscripcion">
+  <table>
+    <thead>
+      <tr>
+        <th>Nombre y apellido</th>
+        <th>Cursos</th>
+        <th>Duracion de la cursada</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let inscripcion of inscripcion">
+        <td>
+          <ul>
+            <li *ngFor="let alumno of inscripcion.alumnos">
+              {{ alumno.nombre }} {{ alumno.apellido }}
+            </li>
+          </ul>
+        </td>
+        <td>
+          <ul>
+            <li *ngFor="let curso of inscripcion.cursos">
+              {{ curso.nombre }}
+            </li>
+          </ul>
+        </td>
+        <td>
+          <ul>
+            <li *ngFor="let curso of inscripcion.cursos">
+              {{ curso.fecha_inicio | date : "dd/MM/YYYY" }}
+              al
+              {{ curso.fecha_fin | date : "dd/MM/YYYY" }}
+            </li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

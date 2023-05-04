@@ -2,7 +2,7 @@ export interface Usuario {
   id: number;
   nombre: string;
   apellido: string;
-  dni: number;
-  edad: number;
+  role: string;
   email: string;
+  token: string;
 }

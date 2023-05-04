@@ -74,13 +74,13 @@ export class AlumnosService {
       .asObservable()
       .pipe(map((alumnos) => alumnos.find((a) => a.id === id)));
   }
-  // obtenerAlumnosPorCursoId(cursoId: number): Alumno[] {
-  //   // Filtrar los alumnos por el ID del curso
-  //   const alumnosInscritos = this.estudiantes$
-  //     .getValue()
-  //     .filter((alumno) => alumno.idCurso === cursoId);
-
-  //   // Devolver la lista de alumnos inscritos en el curso
-  //   return alumnosInscritos;
-  // }
 }
+// obtenerAlumnosPorCursoId(cursoId: number): Alumno[] {
+//   // Filtrar los alumnos por el ID del curso
+//   const alumnosInscritos = this.estudiantes$
+//     .getValue()
+//     .filter((alumno) => alumno.idCurso === cursoId);
+
+//   // Devolver la lista de alumnos inscritos en el curso
+//   return alumnosInscritos;
+// }

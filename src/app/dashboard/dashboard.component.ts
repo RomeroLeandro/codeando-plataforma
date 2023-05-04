@@ -1,5 +1,5 @@
 import { Component, OnDestroy } from '@angular/core';
-import { AuthService } from '../core/services/auth.service';
+import { AuthService } from '../auth/services/auth.service';
 import { Usuario } from '../core/models';
 import { Observable, Subject } from 'rxjs';
 import links from './nav-items';
@@ -13,7 +13,7 @@ import { Router } from '@angular/router';
 export class DashboardComponent implements OnDestroy {
   showFiller = false;
 
-  authUser$: Observable<Usuario>;
+  authUser$: Observable<Usuario | null>;
 
   links = links;
 
@@ -29,6 +29,6 @@ export class DashboardComponent implements OnDestroy {
   }
 
   logout(): void {
-    this.router.navigate(['auth', 'login']);
+    this.authService.logout();
   }
 }
