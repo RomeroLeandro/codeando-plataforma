@@ -16,18 +16,15 @@ export class LoginComponent {
     password: this.passwordControl,
   });
 
-  constructor(
-    private authService: AuthService,
-    private activatedRoute: ActivatedRoute
-  ) {
-    console.log(this.activatedRoute.snapshot);
+  constructor(private authService: AuthService, private activatedRoute: ActivatedRoute) {
   }
+
 
   onSubmit(): void {
     if (this.loginForm.invalid) {
       this.loginForm.markAllAsTouched();
     } else {
-      this.authService.login(this.loginForm.value as LoginFormValue);
+      this.authService.login(this.loginForm.value as LoginFormValue)
     }
   }
 }

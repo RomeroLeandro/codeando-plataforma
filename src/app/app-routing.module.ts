@@ -28,11 +28,6 @@ const routes: Routes = [
     component: AuthComponent,
     loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule),
   },
-  {
-    // CUALQUIER RUTA
-    path: 'inscripciones',
-    component: InscripcionesComponent,
-  },
   // RUTAS INDEFINIDAS....
   {
     // CUALQUIER RUTA

@@ -10,6 +10,7 @@ import { LoginComponent } from './auth/pages/login/login.component';
 import { CoreModule } from './core/core.module';
 import { CursosModule } from './dashboard/pages/cursos/cursos.module';
 import { HttpClientModule } from '@angular/common/http';
+import { StoreModule } from '@ngrx/store';
 
 @NgModule({
   declarations: [AppComponent],
@@ -19,6 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
     CoreModule,
     AppRoutingModule,
     HttpClientModule,
+    StoreModule.forRoot({})
   ],
   providers: [],
   bootstrap: [AppComponent],
