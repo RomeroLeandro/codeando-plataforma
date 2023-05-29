@@ -15,7 +15,7 @@ import { RegisterComponent } from './pages/register/register.component';
 const routes: Routes = [
   {
     path: 'login',
-    component: LoginComponent,
+    component: LoginComponent
   },
   {
     path: 'register',
@@ -24,11 +24,14 @@ const routes: Routes = [
   {
     path: '**',
     redirectTo: 'login',
-  },
-];
+  }
+]
 
 @NgModule({
-  declarations: [AuthComponent, LoginComponent],
+  declarations: [
+    AuthComponent,
+    LoginComponent,
+  ],
   imports: [
     CommonModule,
     ReactiveFormsModule,
@@ -39,6 +42,6 @@ const routes: Routes = [
     MatInputModule,
     MatButtonModule,
     MatIconModule,
-  ],
+  ]
 })
-export class AuthModule {}
+export class AuthModule { }

@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, Subject, map } from 'rxjs';
 import { Alumno } from '../alumnos.component';
+import { HttpClient } from '@angular/common/http';
+import { enviroment } from 'src/environments/environments';
 
 @Injectable({
   providedIn: 'root',
@@ -63,24 +65,21 @@ export class AlumnosService {
     },
   ]);
 
-  constructor() {}
+  constructor(private httpClient: HttpClient) { }
+
+
+  getStudentsFromDB(): Observable<Alumno[]> {
+    return this.httpClient.get<Alumno[]>(`${enviroment.apiBaseUrl}/students`);
+  }
 
   obtenerAlumnos(): Observable<Alumno[]> {
     return this.estudiantes$.asObservable();
   }
 
   obtenerAlumnoPorId(id: number): Observable<Alumno | undefined> {
-    return this.estudiantes$
-      .asObservable()
-      .pipe(map((alumnos) => alumnos.find((a) => a.id === id)));
+    return this.estudiantes$.asObservable()
+      .pipe(
+        map((alumnos) => alumnos.find((a) => a.id === id))
+      )
   }
 }
-// obtenerAlumnosPorCursoId(cursoId: number): Alumno[] {
-//   // Filtrar los alumnos por el ID del curso
-//   const alumnosInscritos = this.estudiantes$
-//     .getValue()
-//     .filter((alumno) => alumno.idCurso === cursoId);
-
-//   // Devolver la lista de alumnos inscritos en el curso
-//   return alumnosInscritos;
-// }

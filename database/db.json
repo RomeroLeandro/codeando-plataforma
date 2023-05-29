@@ -1,5 +1,5 @@
 {
-  "usuarios": [
+  "users": [
     {
       "id": 1,
       "nombre": "Juan",
@@ -17,222 +17,119 @@
       "password": "q1w2e3r4",
       "token": "l0k9j8h7g6f5",
       "role": "admin"
-    },
-    {
-      "id": 3,
-      "nombre": "Carlos",
-      "apellido": "Sánchez",
-      "email": "carlos.sanchez@example.com",
-      "password": "s5d6f7g8",
-      "token": "h6j7k8l9m0n1",
-      "role": "user"
-    },
-    {
-      "id": 4,
-      "nombre": "Lucía",
-      "apellido": "Fernández",
-      "email": "lucia.fernandez@example.com",
-      "password": "t9y8u7i6",
-      "token": "b5v4c3x2z1",
-      "role": "admin"
-    },
-    {
-      "id": 5,
-      "nombre": "Pedro",
-      "apellido": "Gómez",
-      "email": "pedro.gomez@example.com",
-      "password": "g2h3j4k5",
-      "token": "m6n7b8v9c0x1",
-      "role": "user"
-    },
-    {
-      "id": 6,
-      "nombre": "Laura",
-      "apellido": "Jiménez",
-      "email": "laura.jimenez@example.com",
-      "password": "e4r5t6y7",
-      "token": "q2w3e4r5t6y7",
-      "role": "user"
-    },
-    {
-      "id": 7,
-      "nombre": "Miguel",
-      "apellido": "Ruiz",
-      "email": "miguel.ruiz@example.com",
-      "password": "u8i9o0p1",
-      "token": "a2s3d4f5g6h7",
-      "role": "admin"
-    },
-    {
-      "id": 8,
-      "nombre": "Isabel",
-      "apellido": "López",
-      "email": "isabel.lopez@example.com",
-      "password": "z1x2c3v4",
-      "token": "n8m7b6v5c4x3",
-      "role": "user"
-    },
-    {
-      "id": 9,
-      "nombre": "Alejandro",
-      "apellido": "Martínez",
-      "email": "alejandro.martinez@example.com",
-      "password": "b1n2m3l4",
-      "token": "v6c7x8z9a0",
-      "role": "user"
-    },
-    {
-      "id": 10,
-      "nombre": "Ana",
-      "apellido": "Rodríguez",
-      "email": "ana.rodriguez@example.com",
-      "password": "k5j4h3g2",
-      "token": "q9w8e7r6t5y4u3",
-      "role": "admin"
-    },
-    {
-      "id": 11,
-      "nombre": "Javier",
-      "apellido": "Sánchez",
-      "email": "javier.sanchez@example.com",
-      "password": "p0o9i8u7",
-      "token": "m6n5b4v3c2",
-      "role": "user"
-    },
-    {
-      "id": 12,
-      "nombre": "Marta",
-      "apellido": "González",
-      "email": "marta.gonzalez@example.com",
-      "password": "k1j2h3g4",
-      "token": "q5w6e7r8t9",
-      "role": "admin"
-    },
-    {
-      "id": 13,
-      "nombre": "Lucas",
-      "apellido": "Hernández",
-      "email": "lucas.hernandez@example.com",
-      "password": "z0x9c8v7",
-      "token": "b6n5m4",
-      "role": "user"
-    },
-    {
-      "id": 14,
-      "nombre": "Sara",
-      "apellido": "García",
-      "email": "sara.garcia@example.com",
-      "password": "t5r4e3w2",
-      "token": "y1u2i3",
-      "role": "user"
-    },
-    {
-      "id": 15,
-      "nombre": "Hugo",
-      "apellido": "Fernández",
-      "email": "hugo.fernandez@example.com",
-      "password": "a1s2d3f4",
-      "token": "g5h6j7k8",
-      "role": "admin"
-    },
-    {
-      "id": 16,
-      "nombre": "Natalia",
-      "apellido": "López",
-      "email": "natalia.lopez@example.com",
-      "password": "q2w3e4r5",
-      "token": "t6y7u8i9",
-      "role": "user"
-    },
-    {
-      "id": 17,
-      "nombre": "David",
-      "apellido": "Gómez",
-      "email": "david.gomez@example.com",
-      "password": "p9o8i7u6",
-      "token": "z5x4c3v2",
-      "role": "user"
-    },
-    {
-      "id": 18,
-      "nombre": "Ismael",
-      "apellido": "Muñoz",
-      "email": "ismael.munoz@example.com",
-      "password": "l3k4j5h6",
-      "token": "f4w1c5j8",
-      "role": "user"
     }
   ],
-  "cursos": [
+  "courses": [
     {
       "id": 1,
-      "nombre": "Desarrollo web",
+      "subjectId": 12345,
+      
       "fechaInicio": "2023-06-01",
-      "fechaFin": "2023-06-30",
-      "comision": 12345
+      "fechaFin": "2023-06-30"
     },
     {
       "id": 2,
-      "nombre": "React",
+      "subjectId": 23456,
+      
       "fechaInicio": "2023-07-01",
-      "fechaFin": "2023-07-31",
-      "comision": 23456
+      "fechaFin": "2023-07-31"
     },
     {
       "id": 3,
-      "nombre": "JavaScript",
+      "subjectId": 34567,
+      
       "fechaInicio": "2023-08-01",
-      "fechaFin": "2023-08-31",
-      "comision": 34567
+      "fechaFin": "2023-08-31"
     },
     {
       "id": 4,
-      "nombre": "WordPress",
+      
       "fechaInicio": "2023-09-01",
       "fechaFin": "2023-09-30",
-      "comision": 45678
+      "subjectId": 45678
     },
     {
       "id": 5,
-      "nombre": "Flutter",
+      "subjectId": 56789,
+      
       "fechaInicio": "2023-10-01",
-      "fechaFin": "2023-10-31",
-      "comision": 56789
+      "fechaFin": "2023-10-31"
     },
     {
       "id": 6,
-      "nombre": "Angular",
-      "fechaInicio": "2023-11-01",
-      "fechaFin": "2023-11-30",
-      "comision": 67890
+      "subjectId": 67890,
+      "fechaInicio": "2023-8-01",
+      "fechaFin": "2023-11-30"
     },
     {
       "id": 7,
-      "nombre": "React Native",
-      "fechaInicio": "2023-12-01",
-      "fechaFin": "2023-12-31",
-      "comision": 78901
+      "subjectId": 78901,
+      
+      "fechaInicio": "2023-6-01",
+      "fechaFin": "2023-12-31"
     },
     {
       "id": 8,
-      "nombre": "Django",
+      "subjectId": 89012,
+      
       "fechaInicio": "2024-01-01",
-      "fechaFin": "2024-01-31",
-      "comision": 89012
+      "fechaFin": "2024-04-31"
     },
     {
       "id": 9,
-      "nombre": "Vue.js",
+      "subjectId": 90123,
       "fechaInicio": "2024-02-01",
-      "fechaFin": "2024-02-29",
-      "comision": 90123
+      "fechaFin": "2024-06-29"
     },
     {
       "id": 10,
-      "nombre": "Ionic",
+      "subjectId": 65478,
+      
       "fechaInicio": "2024-03-01",
-      "fechaFin": "2024-03-31",
-      "comision": 65478
+      "fechaFin": "2024-08-31"
+    }
+  ],
+  "subjet":[
+    {
+      "id":1,
+      "nombre": "Desarrollo web"
+    },
+    {
+      "id":2,
+      "nombre": "React"
+    },
+    {
+      "id":3,
+      "nombre": "JavaScript"
+    },
+    {
+      "id":4,
+      "nombre": "WordPress"
+    },
+    {
+      "id":5,
+      "nombre": "Flutter"
+    },
+    {
+      "id":6,
+      "nombre": "Angular"
+    },
+    {
+      "id":7,
+      
+      "nombre": "React Native"
+    },
+    {
+      "id":8,
+      "nombre": "Django"
+    },
+    {
+      "id":9,
+      "nombre": "Vue.js"
+    },
+    {
+      "id":10,
+      "nombre": "Ionic"
     }
   ]
 }

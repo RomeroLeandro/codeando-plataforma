@@ -12,16 +12,20 @@ import { MatInputModule } from '@angular/material/input';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
-import { DetalleCursoComponent } from './pages/detalle-curso/detalle-curso.component';
 import { RouterModule } from '@angular/router';
 
+
 @NgModule({
-  declarations: [CursosComponent, AbmCursosComponent, DetalleCursoComponent],
+  declarations: [
+    CursosComponent,
+    AbmCursosComponent
+  ],
   imports: [
     CommonModule,
     PipesModule,
     ReactiveFormsModule,
     MatIconModule,
+
 
     MatFormFieldModule,
     MatInputModule,
@@ -32,17 +36,14 @@ import { RouterModule } from '@angular/router';
     MatDialogModule,
     MatDatepickerModule,
     MatNativeDateModule,
+
     RouterModule.forChild([
       {
+        // /dashboard/cursos
         path: '',
-        component: CursosComponent,
-      },
-      {
-        path: ':id',
-        component: DetalleCursoComponent,
-      },
-    ]),
-  ],
-  exports: [CursosComponent],
+        component: CursosComponent
+      }
+    ])
+  ]
 })
-export class CursosModule {}
+export class CursosModule { }

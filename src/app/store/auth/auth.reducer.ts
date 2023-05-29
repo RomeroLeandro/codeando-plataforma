@@ -1,5 +1,5 @@
 import { createReducer, on } from "@ngrx/store";
-import { Usuario } from "../../core/models/index";
+import { Usuario } from "src/app/core/models";
 import { EstablecerUsuarioAutenticado, QuitarUsuarioAutenticado } from "./auth.actions";
 
 export const authFeatureKey = 'auth';

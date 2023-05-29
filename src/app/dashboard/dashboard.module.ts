@@ -7,14 +7,15 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { RouterModule } from '@angular/router';
 import { MatListModule } from '@angular/material/list';
-// import { AlumnosComponent } from './pages/alumnos/alumnos.component';
-// import { AlumnoDetalleComponent } from './pages/alumnos/pages/alumno-detalle/alumno-detalle.component';
-// import { CursosComponent } from './pages/cursos/cursos.component';
-// import { AdminGuard } from '../auth/guards/admin.guard';
-import { InscripcionesModule } from './pages/inscripciones/inscripciones.module';
+import { AlumnosComponent } from './pages/alumnos/alumnos.component';
+import { AlumnoDetalleComponent } from './pages/alumnos/pages/alumno-detalle/alumno-detalle.component';
+import { CursosComponent } from './pages/cursos/cursos.component';
+import { AdminGuard } from '../auth/guards/admin.guard';
 
 @NgModule({
-  declarations: [DashboardComponent],
+  declarations: [
+    DashboardComponent,
+  ],
   imports: [
     CommonModule,
     RouterModule,
@@ -27,23 +28,22 @@ import { InscripcionesModule } from './pages/inscripciones/inscripciones.module'
       {
         // http://localhost:XXXX/dashboard/estudiantes
         path: 'estudiantes',
-        loadChildren: () =>
-          import('./pages/alumnos/alumnos.module').then((m) => m.AlumnosModule),
+        loadChildren: () => import('./pages/alumnos/alumnos.module').then((m) => m.AlumnosModule)
       },
       {
         path: 'cursos',
-        loadChildren: () =>
-          import('./pages/cursos/cursos.module').then((m) => m.CursosModule),
+        canActivate: [AdminGuard],
+        loadChildren: () => import('./pages/cursos/cursos.module').then((m) => m.CursosModule),
       },
       {
+        // /dashboard/inscripciones
         path: 'inscripciones',
-        loadChildren: () =>
-          import('./pages/inscripciones/inscripciones.module').then(
-            (m) => m.InscripcionesModule
-          ),
-      },
-    ]),
+        loadChildren: () => import('./pages/inscripciones/inscripciones.module').then((m) => m.InscripcionesModule),
+      }
+    ])
   ],
-  exports: [DashboardComponent],
+  exports: [
+    DashboardComponent
+  ]
 })
-export class DashboardModule {}
+export class DashboardModule { }

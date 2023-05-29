@@ -1,38 +1,15 @@
-<div class="inscripcion">
-  <table>
-    <thead>
-      <tr>
-        <th>Nombre y apellido</th>
-        <th>Cursos</th>
-        <th>Duracion de la cursada</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let inscripcion of inscripcion">
-        <td>
-          <ul>
-            <li *ngFor="let alumno of inscripcion.alumnos">
-              {{ alumno.nombre }} {{ alumno.apellido }}
-            </li>
-          </ul>
-        </td>
-        <td>
-          <ul>
-            <li *ngFor="let curso of inscripcion.cursos">
-              {{ curso.nombre }}
-            </li>
-          </ul>
-        </td>
-        <td>
-          <ul>
-            <li *ngFor="let curso of inscripcion.cursos">
-              {{ curso.fecha_inicio | date : "dd/MM/YYYY" }}
-              al
-              {{ curso.fecha_fin | date : "dd/MM/YYYY" }}
-            </li>
-          </ul>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+<p *ngIf="(state$ | async)?.loading; else ifNotLoading">CARGANDO DATA...</p>
+
+<ng-template #ifNotLoading>
+  <!-- <pre>{{ (state$ | async)?.inscripciones | json }}</pre> -->
+  <button (click)="crearInscripcion()" type="button" mat-button >Crear inscripcion</button>
+
+  <ul>
+    <li *ngFor="let inscripcion of (state$ | async)?.inscripciones">
+      {{ inscripcion.student.nombre + ' - ' + inscripcion.subject.nombre }}
+      <button (click)="eliminarInscripcionPorId(inscripcion.id)" mat-icon-button color="warn" type="button">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </li>
+  </ul>
+</ng-template>

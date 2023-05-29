@@ -13,8 +13,13 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { DetalleAlumnoComponent } from './pages/detalle-alumno/detalle-alumno.component';
 import { RouterModule } from '@angular/router';
 
+
 @NgModule({
-  declarations: [AlumnosComponent, AbmAlumnosComponent, DetalleAlumnoComponent],
+  declarations: [
+    AlumnosComponent,
+    AbmAlumnosComponent,
+    DetalleAlumnoComponent
+  ],
   imports: [
     CommonModule,
     MatTableModule,
@@ -29,7 +34,7 @@ import { RouterModule } from '@angular/router';
     RouterModule.forChild([
       {
         path: '',
-        component: AlumnosComponent,
+        component: AlumnosComponent
       },
       {
         path: ':id',
@@ -37,6 +42,8 @@ import { RouterModule } from '@angular/router';
       },
     ]),
   ],
-  exports: [AlumnosComponent],
+  exports: [
+    AlumnosComponent
+  ]
 })
-export class AlumnosModule {}
+export class AlumnosModule { }
