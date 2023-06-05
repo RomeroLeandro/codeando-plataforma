@@ -4,7 +4,10 @@ import { MatTableDataSource } from '@angular/material/table';
 import { AbmAlumnosComponent } from './abm-alumnos/abm-alumnos.component';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AlumnosService } from './services/alumnos.service';
-import { Curso } from '../cursos/models';
+import { environment } from 'src/environments/environments';
+import { HttpClient } from '@angular/common/http';
+import { AuthService } from 'src/app/auth/services/auth.service';
+
 
 export interface Alumno {
   id: number;
@@ -33,6 +36,7 @@ export class AlumnosComponent {
     'editar',
     'eliminar',
   ];
+  isAdmin = false;
 
   aplicarFiltros(ev: Event): void {
     const inputValue = (ev.target as HTMLInputElement)?.value;
@@ -43,10 +47,15 @@ export class AlumnosComponent {
     private matDialog: MatDialog,
     private router: Router,
     private activatedRoute: ActivatedRoute,
-    private alumnosService: AlumnosService
+    private alumnosService: AlumnosService,
+    private httpClient: HttpClient,
+    private authService: AuthService
   ) {
     this.alumnosService.obtenerAlumnos().subscribe((alumnos) => {
       this.dataSource.data = alumnos;
+    });
+    this.authService.obtenerUsuarioAutenticado().subscribe((usuario) => {
+      this.isAdmin = usuario?.role === 'admin';
     });
   }
 
@@ -55,29 +64,37 @@ export class AlumnosComponent {
       relativeTo: this.activatedRoute,
     });
   }
-
   crearAlumno(): void {
     const dialog = this.matDialog.open(AbmAlumnosComponent);
     dialog.afterClosed().subscribe((valor) => {
       if (valor) {
-        this.dataSource.data = [
-          ...this.dataSource.data,
-
-          {
-            ...valor,
-            fecha_registro: new Date(),
-            id: this.dataSource.data.length + 1,
+        const nuevoEstudiante: Alumno = {
+          ...valor,
+          fecha_registro: new Date(),
+          id: this.dataSource.data.length + 1,
+        };
+  
+        this.alumnosService.agregarEstudiante(nuevoEstudiante).subscribe(
+          (estudianteAgregado) => {
+            this.dataSource.data = [
+              ...this.dataSource.data,
+              ...(Array.isArray(estudianteAgregado) ? estudianteAgregado : [estudianteAgregado])
+            ];
           },
-        ];
+        );
       }
     });
   }
-
   eliminarAlumno(alumnoParaEliminar: Alumno): void {
-    this.dataSource.data = this.dataSource.data.filter(
-      (alumnoActual) => alumnoActual.id !== alumnoParaEliminar.id
+  this.httpClient.delete(`${environment.apiBaseUrl}/students/${alumnoParaEliminar.id}`)
+    .subscribe(
+      () => {
+        this.dataSource.data = this.dataSource.data.filter(
+          (alumnoActual) => alumnoActual.id !== alumnoParaEliminar.id
+        );
+      },
     );
-  }
+}
 
   editarAlumno(alumnoParaEditar: Alumno): void {
     const dialog = this.matDialog.open(AbmAlumnosComponent, {
@@ -87,12 +104,18 @@ export class AlumnosComponent {
     });
     dialog.afterClosed().subscribe((valorDelFormulario) => {
       if (valorDelFormulario) {
-        this.dataSource.data = this.dataSource.data.map((alumnoActual) =>
-          alumnoActual.id === alumnoParaEditar.id
-            ? { ...alumnoActual, ...valorDelFormulario }
-            : alumnoActual
-        );
+        this.httpClient.put((`${environment.apiBaseUrl}/students/${alumnoParaEditar.id}`), valorDelFormulario)
+          .subscribe(
+            () => {
+              this.dataSource.data = this.dataSource.data.map((alumnoActual) =>
+                alumnoActual.id === alumnoParaEditar.id
+                  ? { ...alumnoActual, ...valorDelFormulario }
+                  : alumnoActual
+              );
+            },
+          );
       }
     });
   }
 }
+

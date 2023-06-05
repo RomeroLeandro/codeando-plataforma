@@ -21,115 +21,91 @@
   ],
   "courses": [
     {
+      "nombre": "Desarrollo Web",
+      "fecha_inicio": "2023-04-27",
+      "fecha_fin": "2023-04-27",
       "id": 1,
-      "subjectId": 12345,
-      
-      "fechaInicio": "2023-06-01",
-      "fechaFin": "2023-06-30"
+      "subjectId": 1
     },
     {
+      "fecha_inicio": "2023-04-27",
+      "fecha_fin": "2023-04-27",
       "id": 2,
-      "subjectId": 23456,
-      
-      "fechaInicio": "2023-07-01",
-      "fechaFin": "2023-07-31"
-    },
-    {
-      "id": 3,
-      "subjectId": 34567,
-      
-      "fechaInicio": "2023-08-01",
-      "fechaFin": "2023-08-31"
-    },
-    {
-      "id": 4,
-      
-      "fechaInicio": "2023-09-01",
-      "fechaFin": "2023-09-30",
-      "subjectId": 45678
-    },
-    {
-      "id": 5,
-      "subjectId": 56789,
-      
-      "fechaInicio": "2023-10-01",
-      "fechaFin": "2023-10-31"
-    },
-    {
-      "id": 6,
-      "subjectId": 67890,
-      "fechaInicio": "2023-8-01",
-      "fechaFin": "2023-11-30"
-    },
-    {
-      "id": 7,
-      "subjectId": 78901,
-      
-      "fechaInicio": "2023-6-01",
-      "fechaFin": "2023-12-31"
-    },
-    {
-      "id": 8,
-      "subjectId": 89012,
-      
-      "fechaInicio": "2024-01-01",
-      "fechaFin": "2024-04-31"
-    },
-    {
-      "id": 9,
-      "subjectId": 90123,
-      "fechaInicio": "2024-02-01",
-      "fechaFin": "2024-06-29"
-    },
-    {
-      "id": 10,
-      "subjectId": 65478,
-      
-      "fechaInicio": "2024-03-01",
-      "fechaFin": "2024-08-31"
-    }
-  ],
-  "subjet":[
-    {
-      "id":1,
-      "nombre": "Desarrollo web"
-    },
-    {
-      "id":2,
+      "subjectId": 2,
       "nombre": "React"
     },
     {
-      "id":3,
+      "id": 3,
+      "subjectId": 3,
+      "fecha_fin": "2023-04-27",
+      "fecha_inicio": "2023-04-27",
       "nombre": "JavaScript"
     },
     {
-      "id":4,
+      "id": 4,
+      "subjectId": 4,
+      "fecha_fin": "2023-04-27",
+      "fecha_inicio": "2023-04-27",
       "nombre": "WordPress"
     },
     {
-      "id":5,
+      "id": 5,
+      "subjectId": 5,
+      "fecha_fin": "2023-04-27",
+      "fecha_inicio": "2023-04-27",
       "nombre": "Flutter"
     },
     {
-      "id":6,
+      "id": 6,
+      "subjectId": 6,
+      "fecha_fin": "2023-04-27",
+      "fecha_inicio": "2023-04-27",
       "nombre": "Angular"
+    }
+  ],
+  "subjects": [
+    {
+      "id": 1,
+      "nombre": "Desarrollo web"
     },
     {
-      "id":7,
-      
-      "nombre": "React Native"
+      "id": 2,
+      "nombre": "React"
     },
     {
-      "id":8,
-      "nombre": "Django"
+      "id": 3,
+      "nombre": "JavaScript"
     },
     {
-      "id":9,
-      "nombre": "Vue.js"
+      "id": 4,
+      "nombre": "WordPress"
     },
     {
-      "id":10,
-      "nombre": "Ionic"
+      "id": 5,
+      "nombre": "Flutter"
+    },
+    {
+      "id": 6,
+      "nombre": "Angular"
+    }
+  ],
+  "inscriptions": [
+    {
+      "subjectId": 1,
+      "studentId": 2,
+      "courseId": 1,
+      "id": 3
+    }
+  ],
+  "students": [
+    {
+      "nombre": "María",
+      "apellido": "Gómez",
+      "edad": "24",
+      "dni": 23456789,
+      "email": "maria.gomez@example.com",
+      "id": 2,
+      "fecha_registro": "2023-06-14"
     }
   ]
 }

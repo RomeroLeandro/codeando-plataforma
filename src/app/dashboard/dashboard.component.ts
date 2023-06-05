@@ -1,14 +1,10 @@
 import { Component, OnDestroy } from '@angular/core';
-import { enviroment } from 'src/environments/environments';
 import { AuthService } from '../auth/services/auth.service';
 import { Usuario } from '../core/models';
 import {
   Observable,
   Subject,
-  Subscription,
-  filter,
   map,
-  takeUntil,
 } from 'rxjs';
 import links from './nav-items';
 import { NavItem } from './nav-items';
@@ -30,13 +26,6 @@ export class DashboardComponent implements OnDestroy {
 
   constructor(private authService: AuthService, private router: Router) {
     this.authUser$ = this.authService.obtenerUsuarioAutenticado();
-
-    // this.authService.obtenerUsuarioAutenticado()
-    //   .pipe(
-    //     // tomar hasta que el componente se destruya
-    //     takeUntil(this.destroyed$)
-    //   )
-    //   .subscribe((usuario) => this.authUser = usuario);
   }
 
   ngOnDestroy(): void {
@@ -51,7 +40,7 @@ export class DashboardComponent implements OnDestroy {
   verifyRole(link: NavItem): Observable<boolean> {
     return this.authUser$.pipe(
       map((usuarioAuth) =>
-        link.allowedRoles.some((r) => r === usuarioAuth?.role) // true | false
+        link.allowedRoles.some((r) => r === usuarioAuth?.role)
       )
     );
   }

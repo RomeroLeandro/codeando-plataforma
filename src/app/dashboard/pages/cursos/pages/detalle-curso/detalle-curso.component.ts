@@ -19,7 +19,7 @@ export class DetalleCursoComponent implements OnDestroy {
     private cursoService: CursosService
   ) {
     this.cursoService
-      .obtenerCursoPorId(parseInt(this.activatedRoute.snapshot.params['id']))
+      .getCursoById(parseInt(this.activatedRoute.snapshot.params['id']))
       .pipe(takeUntil(this.destroyed$))
       .subscribe((curso) => (this.curso = curso));
   }

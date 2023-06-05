@@ -2,12 +2,14 @@ import { Component, Inject } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
+
 @Component({
   selector: 'app-abm-cursos',
   templateUrl: './abm-cursos.component.html',
   styleUrls: ['./abm-cursos.component.scss'],
 })
 export class AbmCursosComponent {
+  
   nombreControl = new FormControl('', [Validators.required]);
   fechaInicioControl = new FormControl('', [Validators.required]);
   fechaFinControl = new FormControl('', [Validators.required]);
@@ -23,10 +25,9 @@ export class AbmCursosComponent {
     @Inject(MAT_DIALOG_DATA) private data: any
   ) {
     if (data) {
-      const cursoParaEditar = data.curso;
-      this.nombreControl.setValue(cursoParaEditar.nombre);
-      this.fechaInicioControl.setValue(cursoParaEditar.fecha_inicio);
-      this.fechaFinControl.setValue(cursoParaEditar.fecha_fin);
+      this.nombreControl.setValue(data.cursoParaEditar.nombre);
+      this.fechaInicioControl.setValue(data.cursoParaEditar.fecha_inicio);
+      this.fechaFinControl.setValue(data.cursoParaEditar.fecha_fin);
     }
   }
 

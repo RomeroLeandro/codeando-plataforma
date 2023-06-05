@@ -8,11 +8,15 @@ ul {
     justify-content: center;
     align-items: center;
     padding: 0;
-    margin: 30px;
+
+    width: 100%;
 }
 
 li {
     list-style: none;
     display: flex;
     justify-content: center;
+    align-items: center;
+    width: 50%;
+    font-size: 25px;
 }

@@ -13,6 +13,7 @@ export interface InscripcionWithStudent extends Inscripcion {
   student: Alumno;
 }
 
+
 export interface InscripcionWithSubject extends Inscripcion {
   subject: Subject;
 }

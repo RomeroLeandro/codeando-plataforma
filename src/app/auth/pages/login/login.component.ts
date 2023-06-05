@@ -16,7 +16,7 @@ export class LoginComponent {
     password: this.passwordControl,
   });
 
-  constructor(private authService: AuthService, private activatedRoute: ActivatedRoute) {
+  constructor(private authService: AuthService) {
   }
 
 

@@ -3,7 +3,6 @@
   <form [formGroup]="incripcionForm">
     <div>
       <mat-form-field>
-        <!-- <input matInput /> -->
         <mat-label>Estudiante</mat-label>
         <mat-select [formControl]="studentIdControl">
           <mat-option [value]="alumno.id"  *ngFor="let alumno of alumnos">
@@ -14,7 +13,6 @@
     </div>
     <div>
       <mat-form-field>
-        <!-- <input matInput /> -->
         <mat-label>Curso</mat-label>
         <mat-select [formControl]="selectedCourseControl">
           <mat-option [value]="curso"  *ngFor="let curso of cursos">

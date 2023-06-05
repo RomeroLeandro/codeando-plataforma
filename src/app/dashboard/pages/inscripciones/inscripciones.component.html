@@ -1,12 +1,13 @@
 <p *ngIf="(state$ | async)?.loading; else ifNotLoading">CARGANDO DATA...</p>
 
 <ng-template #ifNotLoading>
-  <!-- <pre>{{ (state$ | async)?.inscripciones | json }}</pre> -->
-  <button (click)="crearInscripcion()" type="button" mat-button >Crear inscripcion</button>
-
+  <button (click)="crearInscripcion()" color="primary" mat-flat-button>
+    <mat-icon>add</mat-icon>
+    Crear inscripcion
+  </button>
   <ul>
     <li *ngFor="let inscripcion of (state$ | async)?.inscripciones">
-      {{ inscripcion.student.nombre + ' - ' + inscripcion.subject.nombre }}
+      {{ inscripcion?.student?.nombre }} {{ inscripcion?.student?.apellido }} - {{ inscripcion?.subject?.nombre }}
       <button (click)="eliminarInscripcionPorId(inscripcion.id)" mat-icon-button color="warn" type="button">
         <mat-icon>delete</mat-icon>
       </button>

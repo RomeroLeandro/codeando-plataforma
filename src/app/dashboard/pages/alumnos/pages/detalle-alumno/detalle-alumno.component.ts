@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { AlumnosService } from '../../services/alumnos.service';
 import { Alumno } from '../../alumnos.component';
 import { Subject, takeUntil } from 'rxjs';
-import { MatTableDataSource } from '@angular/material/table';
+
 
 @Component({
   selector: 'app-detalle-alumno',

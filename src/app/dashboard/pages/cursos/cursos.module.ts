@@ -13,19 +13,22 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { RouterModule } from '@angular/router';
+import { DetalleCursoComponent } from './pages/detalle-curso/detalle-curso.component';
+import { MatSelectModule } from '@angular/material/select';
 
 
 @NgModule({
   declarations: [
     CursosComponent,
-    AbmCursosComponent
+    AbmCursosComponent,
+    DetalleCursoComponent
   ],
   imports: [
     CommonModule,
     PipesModule,
     ReactiveFormsModule,
     MatIconModule,
-
+    MatSelectModule,
 
     MatFormFieldModule,
     MatInputModule,
@@ -42,7 +45,10 @@ import { RouterModule } from '@angular/router';
         // /dashboard/cursos
         path: '',
         component: CursosComponent
-      }
+      },{
+        path: ':id',
+        component: DetalleCursoComponent,
+      },
     ])
   ]
 })

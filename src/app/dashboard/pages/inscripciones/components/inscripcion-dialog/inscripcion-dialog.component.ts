@@ -66,7 +66,7 @@ export class InscripcionDialogComponent implements OnInit, OnDestroy {
         this.cursos = res;
       },
     });
-    this.alumnosService.getStudentsFromDB().subscribe({
+    this.alumnosService.obtenerAlumnos().subscribe({
       next: (res) => {
         this.alumnos = res;
       },

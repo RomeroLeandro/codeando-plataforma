@@ -30,7 +30,6 @@ import { RouterModule } from '@angular/router';
     MatInputModule,
     MatButtonModule,
     ReactiveFormsModule,
-    // AlumnosRoutingModule,
     RouterModule.forChild([
       {
         path: '',

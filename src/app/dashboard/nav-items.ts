@@ -16,7 +16,7 @@ const links: NavItem[] = [
     path: 'cursos',
     title: 'Cursos',
     icon: 'school',
-    allowedRoles: ['admin'],
+    allowedRoles: [],
   },
   {
     path: 'inscripciones',
